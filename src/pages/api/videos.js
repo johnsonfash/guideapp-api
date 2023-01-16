@@ -46,6 +46,28 @@ export default async function handler(req, res) {
                 }
             ))
         }
+        if (req?.query?.page == 3) {
+            response.data = Array(3).fill(0).map((_, i) => (
+                {
+                    id: i + 1,
+                    video_url: `https://guideapp-api.vercel.app/uploads/${i + 1}.MP4`,
+                    video_gems: Math.random() * (40 - 5) + 5,
+                    creator_img: 'https://guideapp-api.vercel.app/uploads/avatar.png',
+                    creator_username: Buffer.from(Math.random().toString()).toString("base64").substring(10, 18).toLowerCase(),
+                }
+            ))
+        }
+        if (req?.query?.page == 4) {
+            response.data = Array(3).fill(0).map((_, i) => (
+                {
+                    id: i + 4,
+                    video_url: `https://guideapp-api.vercel.app/uploads/${i + 4}.MP4`,
+                    video_gems: Math.random() * (40 - 5) + 5,
+                    creator_img: 'https://guideapp-api.vercel.app/uploads/avatar.png',
+                    creator_username: Buffer.from(Math.random().toString()).toString("base64").substring(10, 18).toLowerCase(),
+                }
+            ))
+        }
         res.send(response)
     }
 }
