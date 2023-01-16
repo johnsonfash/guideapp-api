@@ -39,7 +39,7 @@ export default async function handler(req, res) {
             response.data = Array(3).fill(0).map((_, i) => (
                 {
                     id: i + 4,
-                    video_url: `https://guideapp-api.vercel.app/uploads/${i + 4}.mp4`,
+                    video_url: `https://guideapp-api.vercel.app/uploads/${i + 4}.MP4`,
                     video_gems: Math.random() * (40 - 5) + 5,
                     creator_img: 'https://guideapp-api.vercel.app/uploads/avatar.png',
                     creator_username: Buffer.from(Math.random().toString()).toString("base64").substring(10, 18).toLowerCase(),
