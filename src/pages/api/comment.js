@@ -23,7 +23,7 @@ export const config = {
 
 export default async function handler(req, res) {
     await runMiddleware(req, res, cors)
-    let response = { error: false, errorMessage: null, data: [] }
+    let response = { status: true, message: 'OK', data: null }
 
     if (req.method === 'GET') {
         if (req?.query?.id == 1) {
